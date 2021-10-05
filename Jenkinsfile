@@ -1,15 +1,27 @@
 pipeline {
   agent any
   stages {
-    stage('Stage1') {
+    stage('Build') {
       steps {
-        sh 'echo "Stage1 is successful"'
+        sh 'docker build -t myimage 3docker'
       }
     }
 
-    stage('Stage2') {
+    stage('Tag') {
       steps {
-        sh 'echo "Stage2 is successful"'
+        sh 'docker tag myimage nandhurk27/myimage'
+      }
+    }
+
+    stage('Push') {
+      steps {
+        sh 'docker push nandhurk27/myimage'
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        sh 'docker run -d --name pipeline1 9001:80 nandhurk27/myimage'
       }
     }
 

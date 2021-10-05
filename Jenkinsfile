@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t myimage 3docker'
+        sh 'docker build -t myimage Devops'
       }
     }
 

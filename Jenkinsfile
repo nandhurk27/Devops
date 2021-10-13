@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t myimage Dockerfile'
+        sh 'docker build -t apache_pipeline Dockerfile/docker'
       }
     }
 

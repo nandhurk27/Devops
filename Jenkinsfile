@@ -21,7 +21,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh 'docker run -d --name pipeline1 9001:80 nandhurk27/apache_pipeline'
+        sh 'docker run -d --name pipeline1 -p 9001:80 nandhurk27/apache_pipeline'
       }
     }
 
